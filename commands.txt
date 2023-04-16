@@ -1,0 +1,5 @@
+npm i --force
+cd frontend
+npm i --force
+cd ..
+npm run dev
