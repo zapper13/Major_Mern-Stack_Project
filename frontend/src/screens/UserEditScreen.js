@@ -1,3 +1,8 @@
+/**
+ * This is a React component that allows an admin user to edit the details of another user in the
+ * system.
+ * @returns The UserEditScreen component is being returned.
+ */
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'

@@ -1,3 +1,8 @@
+/**
+ * This is a React component that displays a carousel of top-rated products with their names, prices,
+ * and images.
+ * @returns The ProductCarousel component is being returned.
+ */
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Carousel, Image } from 'react-bootstrap'

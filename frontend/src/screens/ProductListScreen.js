@@ -1,3 +1,8 @@
+/**
+ * This is a React component that displays a list of products, allows the user to create new products,
+ * edit existing ones, and delete them if they have admin privileges.
+ * @returns The `ProductListScreen` component is being returned.
+ */
 import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Table, Button, Row, Col } from 'react-bootstrap'

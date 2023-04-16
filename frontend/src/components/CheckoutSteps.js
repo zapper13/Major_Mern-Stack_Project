@@ -1,3 +1,11 @@
+/**
+ * The CheckoutSteps function returns a navigation bar with links to different steps in the checkout
+ * process, with some links disabled depending on the current step.
+ * @returns The CheckoutSteps component is being returned, which contains a navigation bar with links
+ * to different steps in the checkout process. The links are conditionally rendered based on whether
+ * the user has completed the previous step or not. If a step is completed, the link is clickable,
+ * otherwise it is disabled.
+ */
 import React from 'react'
 import { Nav } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'

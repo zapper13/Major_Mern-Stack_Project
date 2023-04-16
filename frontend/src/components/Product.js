@@ -1,3 +1,11 @@
+/**
+ * The Product function is a React component that renders a Card with product information, including an
+ * image, name, rating, and price.
+ * @returns The `Product` component is being returned, which renders a `Card` from `react-bootstrap`
+ * with an image, product name, rating, and price. The `Link` component from `react-router-dom` is used
+ * to link to the product details page. The `Rating` component is a custom component that displays a
+ * star rating based on the `value` prop and the number of reviews based
+ */
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";

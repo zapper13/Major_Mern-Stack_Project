@@ -1,3 +1,9 @@
+/**
+ * This is a React app that uses React Router to render different components based on the URL path.
+ * @returns The App component is being returned, which contains a Router component from
+ * react-router-dom and several Route components that define the paths and components to be rendered
+ * for each path. The Header and Footer components are also included in the returned JSX.
+ */
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'

@@ -24,6 +24,11 @@ import { logout } from './userActions'
 
 const url = "https://mernecommerce2.onrender.com"
 
+/**
+ * This function creates an order by sending a POST request to the server with the order data and
+ * authorization token, and updates the state accordingly.
+ * @param order - The order object that contains the details of the order being created.
+ */
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -67,6 +72,11 @@ export const createOrder = (order) => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a function that retrieves order details from an API using an ID and dispatches actions based
+ * on the success or failure of the request.
+ * @param id - The ID of the order for which the details are being requested.
+ */
 export const getOrderDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -104,6 +114,14 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a Redux action creator function that sends a PUT request to update the payment status of an
+ * order with the provided payment result and dispatches actions based on the success or failure of the
+ * request.
+ * @param orderId - The ID of the order that is being paid.
+ * @param paymentResult - The payment information and result that will be sent to the server to update
+ * the order payment status.
+ */
 export const payOrder = (orderId, paymentResult) => async (
   dispatch,
   getState
@@ -149,6 +167,11 @@ export const payOrder = (orderId, paymentResult) => async (
   }
 }
 
+/**
+ * This is a function that delivers an order by sending a PUT request to the server with the order ID
+ * and authorization token, and dispatches actions based on the success or failure of the request.
+ * @param order - The order object that needs to be delivered.
+ */
 export const deliverOrder = (order) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -190,6 +213,10 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This function lists the orders of the currently logged in user by making an API call and dispatching
+ * actions based on the response.
+ */
 export const listMyOrders = () => async (dispatch, getState) => {
   try {
     dispatch({
@@ -227,6 +254,10 @@ export const listMyOrders = () => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a function that retrieves a list of orders from an API and dispatches actions based on the
+ * success or failure of the request.
+ */
 export const listOrders = () => async (dispatch, getState) => {
   try {
     dispatch({

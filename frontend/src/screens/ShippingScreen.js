@@ -1,3 +1,10 @@
+/**
+ * The ShippingScreen function is a React component that displays a form for entering shipping address
+ * information and saves the information to the Redux store upon submission.
+ * @returns The ShippingScreen component is being returned, which contains a form for entering shipping
+ * address information and a button to continue to the payment screen. The component also includes the
+ * CheckoutSteps component to display the progress of the checkout process.
+ */
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";

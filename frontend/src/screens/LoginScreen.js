@@ -1,3 +1,11 @@
+/**
+ * This is a React component that renders a login form, handles user input, and dispatches a login
+ * action to the Redux store.
+ * @returns The LoginScreen component is being returned, which contains a form for users to enter their
+ * email and password to log in, as well as a link to the registration page for new customers. The
+ * component also handles user authentication and redirects the user to the appropriate page based on
+ * their login status.
+ */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";

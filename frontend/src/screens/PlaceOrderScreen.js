@@ -1,3 +1,8 @@
+/**
+ * The function displays the order summary, shipping and payment information, and allows the user to
+ * place an order.
+ * @returns The PlaceOrderScreen component is being returned.
+ */
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";

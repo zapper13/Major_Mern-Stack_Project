@@ -1,3 +1,8 @@
+/**
+ * This is a React component that renders a registration form and handles user registration using Redux
+ * actions.
+ * @returns The RegisterScreen component is being returned.
+ */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
@@ -6,6 +11,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { register } from "../actions/userActions";
+
 
 const RegisterScreen = ({ location, history }) => {
     const [name, setName] = useState("");

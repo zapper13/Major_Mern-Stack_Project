@@ -29,6 +29,13 @@ import { ORDER_LIST_MY_RESET } from '../constants/orderConstants'
 
 const url = "https://mernecommerce2.onrender.com";
 
+/**
+ * This is a login function that sends a POST request to a server with user email and password,
+ * dispatches actions based on the response, and stores user information in local storage.
+ * @param email - The email of the user trying to log in.
+ * @param password - The password parameter is a string representing the user's password. It is used in
+ * the login function to authenticate the user's credentials and log them in if they are valid.
+ */
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({
@@ -64,6 +71,10 @@ export const login = (email, password) => async (dispatch) => {
   }
 }
 
+/**
+ * This function logs out the user by removing their information from local storage and resetting
+ * various states before redirecting them to the login page.
+ */
 export const logout = () => (dispatch) => {
   localStorage.removeItem('userInfo')
   localStorage.removeItem('cartItems')
@@ -76,6 +87,15 @@ export const logout = () => (dispatch) => {
   document.location.href = '/login'
 }
 
+/**
+ * This is a function that registers a user by sending a POST request to a server with their name,
+ * email, and password, and dispatches actions based on the response.
+ * @param name - The name of the user registering.
+ * @param email - The email parameter is a string that represents the email address of the user who is
+ * registering.
+ * @param password - The password parameter is a string representing the user's chosen password for
+ * registration.
+ */
 export const register = (name, email, password) => async (dispatch) => {
   try {
     dispatch({
@@ -116,6 +136,11 @@ export const register = (name, email, password) => async (dispatch) => {
   }
 }
 
+/**
+ * This is a function that retrieves user details from an API endpoint using an authorization token and
+ * dispatches success or failure actions based on the response.
+ * @param id - The ID of the user whose details are being requested.
+ */
 export const getUserDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -153,6 +178,12 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a function that updates a user's profile information and dispatches actions based on the
+ * success or failure of the update.
+ * @param user - The user object contains the updated user profile information that will be sent to the
+ * server.
+ */
 export const updateUserProfile = (user) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -196,6 +227,10 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a function that retrieves a list of users from an API and dispatches actions based on the
+ * success or failure of the request.
+ */
 export const listUsers = () => async (dispatch, getState) => {
   try {
     dispatch({
@@ -233,6 +268,11 @@ export const listUsers = () => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a function that deletes a user with a specific ID, using an authorization token, and
+ * dispatches actions based on the success or failure of the request.
+ * @param id - The id parameter is the unique identifier of the user that needs to be deleted.
+ */
 export const deleteUser = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -267,6 +307,11 @@ export const deleteUser = (id) => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a function that updates a user's information and dispatches actions based on the success or
+ * failure of the update.
+ * @param user - The user object that contains the updated information for the user.
+ */
 export const updateUser = (user) => async (dispatch, getState) => {
   try {
     dispatch({

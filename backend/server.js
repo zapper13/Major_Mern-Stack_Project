@@ -1,3 +1,7 @@
+/* This is a JavaScript code that sets up a server using the Express framework. It imports necessary
+modules such as `path`, `express`, `dotenv`, `colors`, and `morgan`. It also imports middleware
+functions from a custom `errorMiddleware.js` file and a `connectDB` function from a custom `db.js`
+file. */
 import path from 'path'
 import express from 'express'
 import dotenv from 'dotenv'

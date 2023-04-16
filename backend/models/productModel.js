@@ -1,3 +1,7 @@
+/* This code is defining a Mongoose schema for a product with various properties such as name, image,
+brand, category, description, reviews, rating, numReviews, price, and countInStock. It also defines
+a review schema that is used as a subdocument within the product schema. Finally, it exports a
+Mongoose model for the product schema. */
 import mongoose from 'mongoose'
 
 const reviewSchema = mongoose.Schema(

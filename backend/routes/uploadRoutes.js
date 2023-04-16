@@ -1,3 +1,13 @@
+/**
+ * This is a JavaScript function that sets up a router for handling file uploads using multer and
+ * checks the file type before uploading.
+ * @param file - The file parameter is a representation of the uploaded file being processed by Multer.
+ * It contains information about the file such as its original name, mimetype, and size.
+ * @param cb - cb stands for "callback". It is a function that is passed as an argument to another
+ * function and is called once the operation is completed. In this code, it is used to handle errors or
+ * to return a result after the file is uploaded.
+ * @returns The router object is being exported as the default export of the module.
+ */
 import path from 'path'
 import express from 'express'
 import multer from 'multer'

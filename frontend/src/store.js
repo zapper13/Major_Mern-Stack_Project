@@ -1,3 +1,8 @@
+/* This is a JavaScript code that sets up a Redux store for a web application. It imports necessary
+functions and modules from the Redux library, as well as reducers for different parts of the
+application (products, cart, users, orders). It also sets up initial state for the store, including
+cart items, user information, and shipping address. Finally, it creates the store using the imported
+functions and middleware, and exports it for use in the application. */
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'

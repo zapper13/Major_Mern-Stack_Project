@@ -1,3 +1,8 @@
+/**
+ * This is a React component that displays the details of an order, allows the user to pay for the
+ * order using PayPal, and allows an admin user to mark the order as delivered.
+ * @returns The OrderScreen component is being returned.
+ */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { PayPalButton } from "react-paypal-button-v2";

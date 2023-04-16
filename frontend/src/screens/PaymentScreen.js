@@ -1,3 +1,12 @@
+/**
+ * The PaymentScreen function is a React component that displays a form for selecting a payment method
+ * and dispatches an action to save the selected method.
+ * @returns The PaymentScreen component is being returned, which contains a form for selecting a
+ * payment method and a button to continue to the next step in the checkout process. The component also
+ * includes a CheckoutSteps component to display the current step in the checkout process. If the user
+ * has not yet entered a shipping address, they will be redirected to the shipping screen. When the
+ * form is submitted, the selected payment method is
+ */
 import React, { useState } from 'react'
 import { Form, Button, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'

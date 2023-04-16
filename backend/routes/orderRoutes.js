@@ -1,3 +1,7 @@
+/* This is a module that exports an Express router with various routes and corresponding controller
+functions for handling orders in an e-commerce application. It also includes middleware functions
+for authentication and authorization. The routes include creating and getting orders, updating order
+status to paid or delivered, and getting a user's own orders. */
 import express from 'express'
 const router = express.Router()
 import {

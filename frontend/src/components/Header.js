@@ -1,3 +1,10 @@
+/**
+ * The Header component is a React functional component that renders a navigation bar with links to
+ * different pages and options for user authentication and admin privileges.
+ * @returns The Header component is being returned, which contains a Navbar with links to various pages
+ * such as the cart, user profile, and admin pages. It also includes a search box and a login/logout
+ * button depending on whether the user is logged in or not.
+ */
 import React from "react";
 import { Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,3 +1,4 @@
+/* This is a module that exports two middleware functions `protect` and `admin`. */
 import jwt from 'jsonwebtoken'
 import asyncHandler from 'express-async-handler'
 import User from '../models/userModel.js'

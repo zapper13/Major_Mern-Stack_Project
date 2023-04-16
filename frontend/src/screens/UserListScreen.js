@@ -1,3 +1,10 @@
+/**
+ * This is a React component that displays a list of users and allows an admin user to delete them.
+ * @returns The UserListScreen component is being returned, which displays a table of users with their
+ * ID, name, email, and admin status. It also includes buttons to edit or delete each user. If the user
+ * is not an admin, they will be redirected to the login page. If there is an error, a message will be
+ * displayed. If the page is still loading, a loader will be displayed.
+ */
 import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Table, Button } from 'react-bootstrap'

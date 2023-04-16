@@ -1,3 +1,11 @@
+/**
+ * This is a React component that renders pagination links based on the number of pages and current
+ * page, with options for admin and search functionality.
+ * @returns The `Paginate` component is being returned, which renders a `Pagination` component from the
+ * `react-bootstrap` library. The `Pagination` component displays a series of page numbers that can be
+ * clicked to navigate to different pages. The `pages`, `page`, `isAdmin`, and `keyword` props are used
+ * to determine the number of pages to display, the current active page, and the URL
+ */
 import React from 'react'
 import { Pagination } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'

@@ -1,3 +1,7 @@
+/* The code is defining an array of objects called `products`. Each object represents a product and
+contains properties such as name, image, description, brand, category, price, countInStock, rating,
+and numReviews. This array can be used to display a list of products on a website or in an
+application. */
 const products = [
   {
     name: 'Airpods Wireless Bluetooth Headphones',

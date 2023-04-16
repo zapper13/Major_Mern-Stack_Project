@@ -1,3 +1,6 @@
+/**
+ * This is a script that imports or destroys data from a MongoDB database using Mongoose and Node.js.
+ */
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'

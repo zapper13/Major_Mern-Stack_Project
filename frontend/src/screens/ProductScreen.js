@@ -1,3 +1,8 @@
+/**
+ * The ProductScreen function displays the details of a product, allows the user to add it to their
+ * cart, and submit a review if logged in.
+ * @returns The ProductScreen component is being returned.
+ */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,9 +1,9 @@
 import asyncHandler from 'express-async-handler'
 import Product from '../models/productModel.js'
 
-// @desc    Fetch all products
-// @route   GET /api/products
-// @access  Public
+
+/* This is defining a function called `getProducts` that uses the `asyncHandler` middleware to handle
+any errors that may occur during the asynchronous execution of the function. */
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 10
   const page = Number(req.query.pageNumber) || 1
@@ -17,6 +17,9 @@ const getProducts = asyncHandler(async (req, res) => {
       }
     : {}
 
+/* This code is defining a function called `getProducts` that retrieves a list of products from the
+database based on the user's search query. It uses the `asyncHandler` middleware to handle any
+errors that may occur during the asynchronous execution of the function. */
   const count = await Product.countDocuments({ ...keyword })
   const products = await Product.find({ ...keyword })
     .limit(pageSize)
@@ -25,9 +28,12 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 
-// @desc    Fetch single product
-// @route   GET /api/products/:id
-// @access  Public
+
+/* This code is defining a function called `getProductById` that retrieves a single product from the
+database based on the product ID provided in the request parameters. It uses the `asyncHandler`
+middleware to handle any errors that may occur during the asynchronous execution of the function. If
+the product is found, it is returned as a JSON response. If the product is not found, a 404 error is
+thrown with the message "Product not found". */
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id)
 
@@ -39,9 +45,12 @@ const getProductById = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc    Delete a product
-// @route   DELETE /api/products/:id
-// @access  Private/Admin
+
+/* This code is defining a function called `deleteProduct` that deletes a product from the database
+based on the product ID provided in the request parameters. It uses the `asyncHandler` middleware to
+handle any errors that may occur during the asynchronous execution of the function. If the product
+is found, it is removed from the database and a JSON response with the message "Product removed" is
+returned. If the product is not found, a 404 error is thrown with the message "Product not found". */
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id)
 
@@ -54,9 +63,10 @@ const deleteProduct = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc    Create a product
-// @route   POST /api/products
-// @access  Private/Admin
+
+/* `const createProduct` is a function that creates a new product in the database. It uses the
+`asyncHandler` middleware to handle any errors that may occur during the asynchronous execution of
+the function. */
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
     name: 'Sample name',
@@ -74,9 +84,14 @@ const createProduct = asyncHandler(async (req, res) => {
   res.status(201).json(createdProduct)
 })
 
-// @desc    Update a product
-// @route   PUT /api/products/:id
-// @access  Private/Admin
+
+/* `const updateProduct` is a function that updates an existing product in the database based on the
+product ID provided in the request parameters. It uses the `asyncHandler` middleware to handle any
+errors that may occur during the asynchronous execution of the function. The function extracts the
+updated product information from the request body and updates the corresponding fields in the
+product object. If the product is found and updated successfully, the updated product is returned as
+a JSON response. If the product is not found, a 404 error is thrown with the message "Product not
+found". */
 const updateProduct = asyncHandler(async (req, res) => {
   const {
     name,
@@ -88,6 +103,12 @@ const updateProduct = asyncHandler(async (req, res) => {
     countInStock,
   } = req.body
 
+/* This code is defining a function called `updateProduct` that updates an existing product in the
+database based on the product ID provided in the request parameters. It first retrieves the product
+from the database using the `findById` method and then updates the corresponding fields in the
+product object with the new values provided in the request body. If the product is found and updated
+successfully, the updated product is returned as a JSON response. If the product is not found, a 404
+error is thrown with the message "Product not found". */
   const product = await Product.findById(req.params.id)
 
   if (product) {
@@ -107,9 +128,18 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc    Create new review
-// @route   POST /api/products/:id/reviews
-// @access  Private
+
+/* `const createProductReview` is a function that creates a new review for a product in the database.
+It uses the `asyncHandler` middleware to handle any errors that may occur during the asynchronous
+execution of the function. The function extracts the rating and comment information from the request
+body and retrieves the corresponding product from the database using the product ID provided in the
+request parameters. If the product is found, the function checks if the user has already reviewed
+the product. If the user has already reviewed the product, a 400 error is thrown with the message
+"Product already reviewed". If the user has not reviewed the product, a new review object is created
+with the user's name, rating, comment, and ID, and added to the product's reviews array. The
+product's `numReviews` and `rating` fields are updated based on the new review, and the updated
+product is saved to the database. Finally, a JSON response with the message "Review added" is
+returned. If the product is not found, a 404 error is thrown with the message "Product not found". */
 const createProductReview = asyncHandler(async (req, res) => {
   const { rating, comment } = req.body
 
@@ -125,6 +155,17 @@ const createProductReview = asyncHandler(async (req, res) => {
       throw new Error('Product already reviewed')
     }
 
+   /* This code is defining a function called `createProductReview` that creates a new review for a
+   product in the database. It first extracts the rating and comment information from the request
+   body and retrieves the corresponding product from the database using the product ID provided in
+   the request parameters. If the product is found, the function checks if the user has already
+   reviewed the product. If the user has already reviewed the product, a 400 error is thrown with
+   the message "Product already reviewed". If the user has not reviewed the product, a new review
+   object is created with the user's name, rating, comment, and ID, and added to the product's
+   reviews array. The product's `numReviews` and `rating` fields are updated based on the new
+   review, and the updated product is saved to the database. Finally, a JSON response with the
+   message "Review added" is returned. If the product is not found, a 404 error is thrown with the
+   message "Product not found". */
     const review = {
       name: req.user.name,
       rating: Number(rating),
@@ -148,9 +189,13 @@ const createProductReview = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc    Get top rated products
-// @route   GET /api/products/top
-// @access  Public
+
+/* `getTopProducts` is a function that retrieves the top 3 products from the database based on their
+rating. It uses the `asyncHandler` middleware to handle any errors that may occur during the
+asynchronous execution of the function. The function finds all products in the database, sorts them
+in descending order based on their rating, and limits the results to the top 3 products. The
+function then returns a JSON response with the top 3 products. This function is exported along with
+other functions to be used in other parts of the application. */
 const getTopProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({}).sort({ rating: -1 }).limit(3)
 

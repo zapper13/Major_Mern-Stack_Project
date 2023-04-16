@@ -1,3 +1,9 @@
+/**
+ * The CartScreen function displays the items in the user's shopping cart, allows the user to adjust
+ * the quantity of each item or remove it from the cart, and calculates the subtotal and total cost of
+ * the items in the cart.
+ * @returns The CartScreen component is being returned.
+ */
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

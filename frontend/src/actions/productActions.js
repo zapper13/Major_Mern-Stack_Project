@@ -26,6 +26,14 @@ import { logout } from './userActions'
 
 const url = "https://mernecommerce2.onrender.com";
 
+/**
+ * This is a function that lists products based on a keyword and page number, and dispatches actions to
+ * update the state based on the success or failure of the API call.
+ * @param [keyword] - A string that represents a keyword to search for in the product list. It is an
+ * optional parameter and defaults to an empty string if not provided.
+ * @param [pageNumber] - The page number parameter is used to specify which page of products to
+ * retrieve from the server. This is useful for implementing pagination on the client side.
+ */
 export const listProducts = (keyword = '', pageNumber = '') => async (
   dispatch
 ) => {
@@ -51,6 +59,12 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
   }
 }
 
+/**
+ * This is a Redux action that fetches details of a product with a given ID and dispatches success or
+ * fail actions based on the result.
+ * @param id - The id parameter is the unique identifier of the product whose details are being
+ * requested.
+ */
 export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST })
@@ -72,6 +86,11 @@ export const listProductDetails = (id) => async (dispatch) => {
   }
 }
 
+/**
+ * This is a function that deletes a product from the database using an HTTP DELETE request and updates
+ * the state accordingly.
+ * @param id - The id parameter is the unique identifier of the product that needs to be deleted.
+ */
 export const deleteProduct = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -108,6 +127,10 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a function that creates a new product by sending a POST request to a server API endpoint,
+ * with authorization headers and error handling.
+ */
 export const createProduct = () => async (dispatch, getState) => {
   try {
     dispatch({
@@ -145,6 +168,11 @@ export const createProduct = () => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a Redux action that updates a product in the database using an HTTP PUT request with
+ * authorization headers.
+ * @param product - The product object that needs to be updated.
+ */
 export const updateProduct = (product) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -188,6 +216,13 @@ export const updateProduct = (product) => async (dispatch, getState) => {
   }
 }
 
+/**
+ * This is a function that creates a product review and sends a request to the server with the review
+ * data and user authorization token.
+ * @param productId - The ID of the product for which the review is being created.
+ * @param review - The review parameter is an object containing the details of the product review, such
+ * as the rating and comment. It is passed as the second argument to the axios.post() method.
+ */
 export const createProductReview = (productId, review) => async (
   dispatch,
   getState
@@ -228,6 +263,10 @@ export const createProductReview = (productId, review) => async (
   }
 }
 
+/**
+ * This is a Redux action that fetches the top products from an API and dispatches an action with the
+ * data or an error message.
+ */
 export const listTopProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_TOP_REQUEST })

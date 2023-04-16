@@ -1,3 +1,8 @@
+/**
+ * The ProfileScreen function displays the user's profile information and order history, and allows the
+ * user to update their profile information.
+ * @returns The ProfileScreen component is being returned.
+ */
 import React, { useState, useEffect } from "react";
 import { Table, Form, Button, Row, Col } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";

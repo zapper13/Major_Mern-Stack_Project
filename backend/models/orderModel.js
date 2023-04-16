@@ -1,3 +1,6 @@
+/* This code is defining a Mongoose schema for an order, which includes information such as the user
+who placed the order, the items in the order, the shipping address, payment information, and order
+status. It then exports a Mongoose model for the order schema. */
 import mongoose from 'mongoose'
 
 const orderSchema = mongoose.Schema(

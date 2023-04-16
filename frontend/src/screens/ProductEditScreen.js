@@ -1,3 +1,8 @@
+/**
+ * This is a React component that allows an admin user to edit a product's details and update them in
+ * the database.
+ * @returns The ProductEditScreen component is being returned.
+ */
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'

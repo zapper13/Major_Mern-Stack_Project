@@ -1,3 +1,8 @@
+/**
+ * This is a React component that displays a list of orders and their details, and is only accessible
+ * to users with admin privileges.
+ * @returns The OrderListScreen component is being returned.
+ */
 import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Table, Button } from 'react-bootstrap'

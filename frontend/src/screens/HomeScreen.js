@@ -1,3 +1,8 @@
+/**
+ * The HomeScreen function displays a list of products, with pagination and search functionality, using
+ * data fetched from the Redux store.
+ * @returns The HomeScreen component is being returned.
+ */
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
